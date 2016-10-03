@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="llm.com.liwushuo.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <RadioGroup
+        android:id="@+id/radioGroup_main"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+        <RadioButton
+            android:id="@+id/radioButton_main_home"
+            android:text="首页"
+            android:textColor="@drawable/rb_textcolor_selector"
+            android:drawableTop="@drawable/rb_home_selector"
+            style="@style/style_main" />
+        <RadioButton
+            android:id="@+id/radioButton_main_top"
+            style="@style/style_main"
+            android:drawableTop="@drawable/rb_top_selector"
+            android:text="榜单"
+            android:textColor="@drawable/rb_textcolor_selector"/>
+        <RadioButton
+            android:id="@+id/radioButton_main_fenlei"
+            style="@style/style_main"
+            android:drawableTop="@drawable/rb_fenlei_selector"
+            android:text="分类"
+            android:textColor="@drawable/rb_textcolor_selector"/>
+        <RadioButton
+            android:id="@+id/radioButton_main_mine"
+            style="@style/style_main"
+            android:drawableTop="@drawable/rb_mine_selector"
+            android:text="我的"
+            android:textColor="@drawable/rb_textcolor_selector"/>
+    </RadioGroup>
+</FrameLayout>
