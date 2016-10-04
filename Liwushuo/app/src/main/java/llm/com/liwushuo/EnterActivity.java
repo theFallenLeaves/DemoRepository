@@ -17,6 +17,7 @@ public class EnterActivity extends AppCompatActivity {
                     Thread.sleep(1000);
                     Intent intent=new Intent(EnterActivity.this,MainActivity.class);
                     startActivity(intent);
+                    finish();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
