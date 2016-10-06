@@ -8,29 +8,32 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.xutils.x;
+
 import java.util.List;
 
 import llm.com.liwushuo.R;
+import llm.com.liwushuo.bean.Bean;
 
 /**
  * Created by llm on 2016/10/4.
  */
 public class TopRecommendAdapter extends BaseAdapter {
    private Context context=null;
-    private List<String> list=null;
-    public TopRecommendAdapter(Context context,List<String> list){
+    private List<Bean> list=null;
+    public TopRecommendAdapter(Context context,List<Bean> list){
         this.context=context;
         this.list=list;
     }
 
     @Override
     public int getCount() {
-        return 10;
+        return (list.size()-1)/2;
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public Bean getItem(int i) {
+        return list.get(i);
     }
 
     @Override
@@ -56,6 +59,21 @@ public class TopRecommendAdapter extends BaseAdapter {
         }else{
            viewHolder= (ViewHolder) view.getTag();
         }
+
+        Bean bean1=getItem(i*2+1);
+        Bean bean2=getItem(i*2+2);
+        x.image().bind(viewHolder.imageView1,bean1.getCover_image_url());
+        x.image().bind(viewHolder.imageView2,bean2.getCover_image_url());
+        viewHolder.imageView1Title.setText(bean1.getShort_description());
+        viewHolder.imageView2Title.setText(bean2.getShort_description());
+        viewHolder.title1.setText(bean1.getName());
+        viewHolder.title2.setText(bean2.getName());
+        viewHolder.price1.setText("￥"+bean1.getPrice());
+        viewHolder.price2.setText("￥"+bean2.getPrice());
+
+
+
+
         return view;
     }
     class ViewHolder {
