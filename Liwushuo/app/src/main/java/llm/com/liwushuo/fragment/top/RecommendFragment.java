@@ -64,7 +64,7 @@ public class RecommendFragment extends Fragment {
         listView.addHeaderView(imageView);
     }
     private void getData(){
-        RequestParams requestParams=new RequestParams(TopUtils.TOP100);
+        RequestParams requestParams=new RequestParams(TopUtils.RECOMMEND);
         cancelable= x.http().get(requestParams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
